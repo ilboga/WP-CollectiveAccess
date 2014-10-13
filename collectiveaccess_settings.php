@@ -193,7 +193,8 @@ function collectiveaccess_validate_options($input) {
     $url = str_replace("/index.php", "", $url);
     // removing trailing slash if any
     $url = rtrim($url, '/\\'); 
-    $valid['url_base'] = preg_replace('/[^a-zA_Z0-9\.\/]/','',$url);
+    //$valid['url_base'] = preg_replace('/[^a-zA_Z0-9\.\/]/','',$url);
+    $valid['url_base'] = $url;
     $valid['cache_duration'] = preg_replace('/[^\d]/','',$input['cache_duration']);
     // TODO : sanitize html & javascript for templates !
     $valid['object_template'] = $input['object_template'];
